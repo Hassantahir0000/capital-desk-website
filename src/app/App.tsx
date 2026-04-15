@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import AboutUs from "./AboutUs";
+import Navbar from "./Navbar";
 import svgPaths from "../imports/Home-2/svg-mvwhm2i239";
 import imgSb1 from "../imports/Home-2/ddc493d44b41d3f52b3d27457e6641ac57120ef9.png";
 import imgEllipse6 from "../imports/Home-2/390b1861ea0e79201aefeba18d8c83bc94e99c87.png";
@@ -65,71 +67,19 @@ const vp = { once: true, amount: 0.15 };
 
 export default function App() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [page, setPage] = useState<"home" | "about">("home");
+
+  if (page === "about") {
+    return <AboutUs onNavigateHome={() => { setPage("home"); window.scrollTo(0, 0); }} />;
+  }
 
   return (
     <div className="bg-[#f5f5f5] min-h-screen w-full overflow-x-hidden">
 
-      {/* ── Header / Navigation ─────────────────────────────────────────── */}
-      <header className="bg-white sticky top-0 z-50 border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
-          <div className="flex items-center justify-between">
-            {/* Logo */}
-            <div className="h-12 sm:h-16 w-auto">
-              <svg className="h-full w-auto" fill="none" preserveAspectRatio="xMinYMid meet" viewBox="0 0 223.994 69.1116">
-                <g>
-                  <path d={svgPaths.p3ae1e780} fill="#007BDA" />
-                  <path d={svgPaths.pfbdf900} fill="black" />
-                  <path d={svgPaths.p2a24cd00} fill="black" />
-                  <path d={svgPaths.p1831b480} fill="#007BDA" />
-                </g>
-              </svg>
-            </div>
-
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-8 font-['Inter'] text-[#06113c] text-lg">
-              <a href="#home" className="hover:text-[#007bda] transition-colors">Home</a>
-              <a href="#product" className="hover:text-[#007bda] transition-colors">Product</a>
-              <a href="#how-it-works" className="hover:text-[#007bda] transition-colors">How it works</a>
-              <a href="#beta" className="hover:text-[#007bda] transition-colors">Beta Access</a>
-              <a href="#faqs" className="hover:text-[#007bda] transition-colors">FAQs</a>
-            </nav>
-
-            {/* Desktop CTA Button */}
-            <button className="hidden sm:block bg-gradient-to-r from-[#007BDA] to-black text-white px-6 sm:px-8 py-3 rounded-full font-['Inter'] font-medium text-base sm:text-lg hover:opacity-90 transition-opacity">
-              Contact
-            </button>
-
-            {/* Mobile menu button */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-[#06113c] hover:text-[#007bda] transition-colors"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                {mobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
-          </div>
-
-          {/* Mobile Navigation */}
-          {mobileMenuOpen && (
-            <nav className="lg:hidden mt-4 pb-4 space-y-3 font-['Inter'] text-[#06113c] text-lg border-t border-gray-200 pt-4">
-              <a href="#home" onClick={() => setMobileMenuOpen(false)} className="block hover:text-[#007bda] transition-colors py-2">Home</a>
-              <a href="#product" onClick={() => setMobileMenuOpen(false)} className="block hover:text-[#007bda] transition-colors py-2">Product</a>
-              <a href="#how-it-works" onClick={() => setMobileMenuOpen(false)} className="block hover:text-[#007bda] transition-colors py-2">How it works</a>
-              <a href="#beta" onClick={() => setMobileMenuOpen(false)} className="block hover:text-[#007bda] transition-colors py-2">Beta Access</a>
-              <a href="#faqs" onClick={() => setMobileMenuOpen(false)} className="block hover:text-[#007bda] transition-colors py-2">FAQs</a>
-              <button className="w-full bg-gradient-to-r from-[#007BDA] to-black text-white px-6 py-3 rounded-full font-['Inter'] font-medium text-base hover:opacity-90 transition-opacity mt-2">
-                Contact
-              </button>
-            </nav>
-          )}
-        </div>
-      </header>
+      <Navbar
+        currentPage="home"
+        onNavigateAbout={() => { setPage("about"); window.scrollTo(0, 0); }}
+      />
 
       {/* ── Hero Section ────────────────────────────────────────────────── */}
       <section id="home" className="relative px-4 sm:px-6 lg:px-8 pt-12 sm:pt-20 lg:pt-32 pb-24 sm:pb-32 lg:pb-48">
