@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import GetInTouch from "./GetInTouch";
 import Navbar from "./Navbar";
 import svgPaths from "../imports/Home-2/svg-mvwhm2i239";
-import imgSb1 from "../imports/Home-2/ddc493d44b41d3f52b3d27457e6641ac57120ef9.png";
 import imgEllipse6 from "../imports/Home-2/390b1861ea0e79201aefeba18d8c83bc94e99c87.png";
 import imgEllipse7 from "../imports/Home-2/24530c13b99c10289ad2e34505aa800adc64f3b8.png";
 import imgEllipse8 from "../imports/Home-2/0381804f069369ab31d97f5ffca868fd7c14ed2b.png";
@@ -27,11 +27,6 @@ const slideFromRight = {
   visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" as const } },
 };
 
-const scaleUp = {
-  hidden: { opacity: 0, scale: 0.88 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.75, ease: "easeOut" as const } },
-};
-
 const staggerContainer = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.13 } },
@@ -45,35 +40,6 @@ const staggerItem = {
 // viewport preset — animate once when 15% of element is visible
 const vp = { once: true, amount: 0.15 };
 
-// ── Logo SVG ─────────────────────────────────────────────────────────────────
-function CapitalDeskLogo({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" preserveAspectRatio="xMinYMid meet" viewBox="0 0 223.994 69.1116">
-      <g>
-        <path d={svgPaths.p3ae1e780} fill="#007BDA" />
-        <path d={svgPaths.pfbdf900} fill="black" />
-        <path d={svgPaths.p2a24cd00} fill="black" />
-        <path d={svgPaths.p1831b480} fill="#007BDA" />
-      </g>
-    </svg>
-  );
-}
-
-// ── Plus / Minus icon for accordion ─────────────────────────────────────────
-function PlusIcon({ open }: { open: boolean }) {
-  return (
-    <div className="relative w-6 h-6 flex-shrink-0">
-      <span className="absolute inset-0 flex items-center justify-center">
-        <span className="block w-4 h-0.5 bg-[#1a3347] transition-all duration-300" />
-      </span>
-      <span className="absolute inset-0 flex items-center justify-center">
-        <span
-          className={`block w-0.5 h-4 bg-[#1a3347] transition-all duration-300 ${open ? "opacity-0 rotate-90" : "opacity-100 rotate-0"}`}
-        />
-      </span>
-    </div>
-  );
-}
 
 interface AboutUsProps {
   onNavigateHome?: () => void;
@@ -116,24 +82,18 @@ export default function AboutUs({ onNavigateHome }: AboutUsProps) {
           initial="hidden"
           animate="visible"
         >
-          {/* Eyebrow label */}
-          <motion.div variants={fadeUp} className="flex items-center justify-center mb-6">
-            <span className="inline-flex items-center gap-2 bg-white border border-[#d8d8d8] text-[#007bda] text-sm sm:text-base font-['Inter'] font-medium px-5 py-2 rounded-full shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-[#007bda] inline-block" />
-              About Us
-            </span>
-          </motion.div>
+        
 
           <motion.h1
             variants={fadeUp}
-            className="font-['Faktum_Test'] text-3xl sm:text-4xl md:text-5xl lg:text-[64px] leading-[1.1] text-[#1a3347] tracking-tight mb-4 sm:mb-6 px-4 max-w-5xl mx-auto"
+            className="font-['Faktum_Test'] text-3xl sm:text-4xl lg:text-[48px] leading-tight text-[#1A3347] font-bold tracking-tight mb-4 sm:mb-6 px-4 max-w-5xl mx-auto"
           >
             Built for the workflow behind better underwriting
           </motion.h1>
 
           <motion.p
             variants={fadeUp}
-            className="font-['Inter'] text-lg sm:text-xl md:text-2xl text-[#444] leading-relaxed max-w-4xl mx-auto mb-8 sm:mb-12 px-4"
+            className="font-['Inter'] text-lg sm:text-xl font-regular md:text-2xl text-[#444] leading-relaxed max-w-4xl mx-auto mb-8 sm:mb-12 px-4"
           >
             Capital Desk is a software brand focused on building practical tools for the MCA space.
             We are starting with the Capital Desk Underwriting Calculator — a product designed to help
@@ -509,6 +469,8 @@ export default function AboutUs({ onNavigateHome }: AboutUsProps) {
         </div>
       </section>
 
+      <GetInTouch />
+
       {/* ── Footer ───────────────────────────────────────────────────────── */}
       <footer className="bg-white border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
@@ -516,7 +478,14 @@ export default function AboutUs({ onNavigateHome }: AboutUsProps) {
             {/* Logo & Description */}
             <div className="lg:col-span-2">
               <div className="h-16 w-auto mb-6">
-                <CapitalDeskLogo className="h-full w-auto" />
+                <svg className="h-full w-auto" fill="none" preserveAspectRatio="xMinYMid meet" viewBox="0 0 223.994 69.1116">
+                  <g>
+                    <path d={svgPaths.p3ae1e780} fill="#007BDA" />
+                    <path d={svgPaths.pfbdf900} fill="black" />
+                    <path d={svgPaths.p2a24cd00} fill="black" />
+                    <path d={svgPaths.p1831b480} fill="#007BDA" />
+                  </g>
+                </svg>
               </div>
               <p className="font-['Inter'] text-lg text-[#404040] mb-6 max-w-md">
                 Workflow tools for MCA teams, starting with the Underwriting Calculator.
@@ -550,7 +519,7 @@ export default function AboutUs({ onNavigateHome }: AboutUsProps) {
                 <li><button onClick={onNavigateHome} className="hover:text-[#007BDA] transition-colors">How It Works</button></li>
                 <li><button onClick={onNavigateHome} className="hover:text-[#007BDA] transition-colors">Beta Access</button></li>
                 <li><button onClick={onNavigateHome} className="hover:text-[#007BDA] transition-colors">FAQ</button></li>
-                <li><button onClick={onNavigateHome} className="hover:text-[#007BDA] transition-colors">Contact</button></li>
+                <li><a href="#contact" className="hover:text-[#007BDA] transition-colors">Contact</a></li>
               </ul>
             </div>
 
