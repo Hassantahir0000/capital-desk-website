@@ -53,13 +53,13 @@ function Group28() {
   return (
     <div className="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-0 mt-0 place-items-start relative row-1">
       <div className="col-1 ml-0 mt-0 relative row-1 size-[53.776px]">
-        <img alt="" className="absolute block inset-0 max-w-none size-full" height="53.776" src={imgEllipse6} width="53.776" />
+        <img alt="" className="absolute block inset-0 max-w-none size-full" height="53.776" src={imgEllipse6.src} width="53.776" />
       </div>
       <div className="col-1 ml-[27.99px] mt-0 relative row-1 size-[53.776px]">
-        <img alt="" className="absolute block inset-0 max-w-none size-full" height="53.776" src={imgEllipse7} width="53.776" />
+        <img alt="" className="absolute block inset-0 max-w-none size-full" height="53.776" src={imgEllipse7.src} width="53.776" />
       </div>
       <div className="col-1 ml-[60.41px] mt-0 relative row-1 size-[53.776px]">
-        <img alt="" className="absolute block inset-0 max-w-none size-full" height="53.776" src={imgEllipse8} width="53.776" />
+        <img alt="" className="absolute block inset-0 max-w-none size-full" height="53.776" src={imgEllipse8.src} width="53.776" />
       </div>
     </div>
   );
@@ -735,7 +735,7 @@ function Group24() {
     <div className="absolute contents left-[77px] top-[1617px]">
       <div className="absolute left-[144.68px] rounded-[35.33px] size-[394.81px] top-[1703.56px]" style={{ backgroundImage: "linear-gradient(165.643deg, rgb(0, 123, 218) 10.19%, rgb(0, 0, 0) 93.228%)" }} />
       <div className="absolute left-[100.52px] size-[482.251px] top-[1617px]" data-name="young_professional_woman_using_laptop_to_search_for_jobs_online_advertising_web_service_isolated_on_transparent_background_g_1_4_1 1">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgYoungProfessionalWomanUsingLaptopToSearchForJobsOnlineAdvertisingWebServiceIsolatedOnTransparentBackgroundG1411} />
+        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgYoungProfessionalWomanUsingLaptopToSearchForJobsOnlineAdvertisingWebServiceIsolatedOnTransparentBackgroundG1411.src} />
       </div>
       <div className="absolute flex h-[111.289px] items-center justify-center left-[162.35px] top-[1970.3px] w-[130.72px]">
         <div className="-scale-y-100 flex-none">
@@ -2295,7 +2295,7 @@ function Group11() {
     <div className="absolute contents left-0 top-[5883px]">
       <div className="absolute h-[580px] left-0 top-[5883px] w-[1440px]" style={{ backgroundImage: "linear-gradient(109.372deg, rgb(0, 123, 218) 40.46%, rgb(0, 33, 58) 115.8%, rgb(0, 0, 0) 115.81%)" }} />
       <div className="-translate-x-1/2 absolute h-[574.008px] left-1/2 opacity-20 top-[5886.6px] w-[1440px]" data-name="image 1">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage1} />
+        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage1.src} />
       </div>
       <Frame3 />
     </div>
@@ -2975,7 +2975,7 @@ export default function Home() {
     <div className="bg-[#f5f5f5] relative size-full" data-name="Home">
       <div className="-translate-x-1/2 absolute h-[879px] left-1/2 rounded-[30px] shadow-[0px_2px_34px_0px_rgba(0,0,0,0.25)] top-[623px] w-[1256px]" data-name="SB 1">
         <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[30px]">
-          <img alt="" className="absolute h-[128.97%] left-[-0.01%] max-w-none top-[-0.02%] w-[100.03%]" src={imgSb1} />
+          <img alt="" className="absolute h-[128.97%] left-[-0.01%] max-w-none top-[-0.02%] w-[100.03%]" src={imgSb1.src} />
         </div>
       </div>
       <Frame13 />
@@ -2986,7 +2986,7 @@ export default function Home() {
       <div className="absolute flex h-[399px] items-center justify-center left-[calc(50%+128px)] top-[8259px] w-[492px]">
         <div className="-scale-y-100 flex-none rotate-180">
           <div className="h-[399px] relative rounded-[16px] w-[492px]" data-name="clay-banks-XvS-uKUoUao-unsplash">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={imgClayBanksXvSUKUoUaoUnsplash} />
+            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={imgClayBanksXvSUKUoUaoUnsplash.src} />
           </div>
         </div>
       </div>
@@ -3001,7 +3001,7 @@ export default function Home() {
       <Frame23 />
       <div className="absolute h-[456px] left-[84px] rounded-[20px] top-[4724px] w-[544px]">
         <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[20px]">
-          <img alt="" className="absolute h-[149.12%] left-0 max-w-none top-[-49.11%] w-full" src={imgRectangle35} />
+          <img alt="" className="absolute h-[149.12%] left-0 max-w-none top-[-49.11%] w-full" src={imgRectangle35.src} />
         </div>
       </div>
       <p className="-translate-x-1/2 absolute font-['Inter:Regular',sans-serif] font-normal leading-[1.4] left-[calc(12.5%+565.5px)] not-italic text-[#444] text-[22px] text-center top-[5405px] w-[871px]">Capital Desk is built for the people doing the work every day.</p>
